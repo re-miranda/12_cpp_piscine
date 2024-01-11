@@ -6,7 +6,7 @@
 
 # define MAX_SIZE 8
 
-# include "Contact.class.hpp"
+# include "Contact.hpp"
 
 class	PhoneBook {
 public:

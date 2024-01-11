@@ -19,7 +19,7 @@ char	*trim_beginning_space(char *cstring)
 
 int	main(int argc, char **argv)
 {
-	std::string	objectfied_arg;
+	std::string	ClassyString;
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
@@ -28,10 +28,10 @@ int	main(int argc, char **argv)
 		while (*++argv != NULL)
 		{
 			cstring_toupper(*argv);
-			objectfied_arg = trim_beginning_space(*argv);
-			std::cout << objectfied_arg;
+			ClassyString = trim_beginning_space(*argv);
+			std::cout << ClassyString;
 			if (*(argv + 1) != NULL &&
-				(objectfied_arg.empty() || objectfied_arg.back() != ' '))
+				(ClassyString.empty() || ClassyString.back() != ' '))
 				std::cout << " ";
 		}
 		std::cout << std::endl;

@@ -1,10 +1,10 @@
 NAME		=	crappy_phonebook
 SRC		+=	main.cpp
-SRC		+=	PhoneBook.class.cpp
-SRC		+=	Contact.class.cpp
+SRC		+=	PhoneBook.cpp
+SRC		+=	Contact.cpp
 
-INCLUDE		+=	PhoneBook.class.hpp
-INCLUDE		+=	Contact.class.hpp
+INCLUDE		+=	PhoneBook.hpp
+INCLUDE		+=	Contact.hpp
 
 CPPC		=	c++
 CPPC_FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98

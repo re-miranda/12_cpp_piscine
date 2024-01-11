@@ -1,4 +1,4 @@
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void){
 	this->_contact_is_set = 0;
