@@ -1,5 +1,6 @@
 NAME	=	megaphone
 SRC 	=	Megaphone.cpp
+SRC 	+=	MegaString.cpp
 CC		=	c++
 FLAGS	=	-std=c++98 -Wall -Wextra -Werror
 
