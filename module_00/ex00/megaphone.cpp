@@ -1,5 +1,4 @@
 #include <iostream>
-#include <ctype.h>
 #include "MegaString.hpp"
 
 int	main(int argc, char **argv)

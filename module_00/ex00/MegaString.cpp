@@ -35,3 +35,4 @@ void    MegaString::trim_spaces( std::string &input ) {
         input.pop_back();
     return ;
 }
+

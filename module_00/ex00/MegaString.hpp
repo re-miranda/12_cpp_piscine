@@ -8,11 +8,12 @@ class   MegaString {
         MegaString( void );
         ~MegaString( void );
         void    print_loud( char *input );
-        void    trim_spaces( std::string &input );
 
     private:
         std::string to_upper( std::string input );
         bool    is_first_run;
+        void    trim_spaces( std::string &input );
 };
 
 #endif
+
