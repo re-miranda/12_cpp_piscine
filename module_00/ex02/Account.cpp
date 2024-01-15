@@ -1,5 +1,6 @@
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int	Account::_nbAccounts;
 int	Account::_totalAmount;
@@ -51,7 +52,7 @@ Account::Account( void ) {
 
 Account::~Account( void ) {
     _displayTimestamp();
-    std::cout << "index:" << _accountIndex << ";";
+    std::cout << "index:" << _accountIndex;
     std::cout << ";amount:" << this->_amount;
     std::cout << ";closed" << std::endl;
     return ;
@@ -110,6 +111,12 @@ void	Account::displayStatus( void ) const {
 }
 
 void	Account::_displayTimestamp( void ) {
-    std::cout << "[19920104_091532] ";
+    std::time_t current_time = std::time(NULL);
+    char    buffer[18];
+    struct tm   *local_time = std::localtime(&current_time);
+
+    std::strftime(buffer, 18, "[%Y%m%d_%H%M%S]", local_time);
+    std::cout << buffer << " ";
+    return ;
 }
 
