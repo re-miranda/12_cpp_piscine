@@ -29,10 +29,10 @@ std::string MegaString::to_upper( std::string input ) {
 }
 
 void    MegaString::trim_spaces( std::string &input ) {
-    while (!input.empty() && input.front() == ' ')
+    while (!input.empty() && input[0] == ' ')
         input.erase(0, 1);
-    while (!input.empty() && input.back() == ' ')
-        input.pop_back();
+    while (!input.empty() && input[input.length() - 1] == ' ')
+        input.erase(input.length() - 1, 1);
     return ;
 }
 
