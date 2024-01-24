@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <sstream>
 
 # define MAX_SIZE 8
 
@@ -19,7 +20,6 @@ private:
 	void	_search(void) const;
 	void	_prompt(void);
 	void	_print_summary(void) const;
-	int	_invalid_search_input(std::string input) const;
 };
 
 #endif

@@ -21,27 +21,23 @@ void	PhoneBook::_add_contact(){
 }
 
 void	PhoneBook::_search(void) const{
-	std::string	input;
+	std::string         input;
+	std::istringstream  iinputstream;
+    int                 input_nb = 0;
 
 	this->_print_summary();
-	while (this->_invalid_search_input(input))
+	while (input_nb < 1 || input_nb > 8 || iinputstream.fail() || !iinputstream.eof())
 	{
+        iinputstream.clear();
 		std::cout << "Type a number to display detailed info: ";
 		if (!std::getline(std::cin, input))
             return ;
+        iinputstream.str(input);
+        input_nb = 0;
+        iinputstream >> input_nb;
 	}
-	this->_contactArray[std::stoi(input) - 1].print();
+	this->_contactArray[input_nb - 1].print();
 	return ;
-}
-
-int	PhoneBook::_invalid_search_input(std::string input) const {
-	if (input.empty())
-		return (1);
-	if (!std::isdigit(input[0]))
-		return (1);
-	if (std::stoi(input) < 1 || std::stoi(input) > MAX_SIZE)
-		return (1);
-	return (0);
 }
 
 void	PhoneBook::_print_summary(void) const{
