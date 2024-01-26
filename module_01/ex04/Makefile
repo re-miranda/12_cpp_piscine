@@ -3,7 +3,7 @@ MAIN	=	main.cpp
 
 INCLUDE	+=	$(SRC:%.cpp=%.hpp)
 
-CPPC		=	c++
+CPPC		=	c++-13
 CPPC_FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98
 
 all: $(NAME)

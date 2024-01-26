@@ -14,12 +14,12 @@ void    Harl::debug( void ) {
 }
 
 void    Harl::info( void ) {
-    std::cout << "info" << std::endl;
+    std::cout << "Info" << std::endl;
     return ;
 }
 
 void    Harl::warning( void ) {
-    std::cout << "warning" << std::endl;
+    std::cout << "Warning" << std::endl;
     return ;
 }
 
@@ -28,8 +28,32 @@ void    Harl::error( void ) {
     return ;
 }
 
-void    Harl::complain( std::string ) {
-    this->error();
+int     Harl::levelResolver( std::string level ) {
+    if (level.compare("DEBUG") == 0)
+        return (DEBUG);
+    if (level.compare("INFO") == 0)
+        return (INFO);
+    if (level.compare("WARNING") == 0)
+        return (WARNING);
+    if (level.compare("ERROR") == 0)
+        return (ERROR);
+    return (INVALID);
+}
+
+void    Harl::complain( std::string input ) {
+    switch (this->levelResolver(input)) {
+        case DEBUG:
+            this->debug();
+        case INFO:
+            this->info();
+        case WARNING:
+            this->warning();
+        case ERROR:
+            this->error();
+        default:
+            std::cout << "No complaints!" << std::endl;
+            break;
+    }
     return ;
 }
 
