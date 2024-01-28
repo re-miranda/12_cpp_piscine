@@ -41,19 +41,19 @@ int     Harl::levelResolver( std::string level ) {
 }
 
 void    Harl::complain( std::string input ) {
-    switch (this->levelResolver(input)) {
-        case DEBUG:
-            this->debug();
-        case INFO:
-            this->info();
-        case WARNING:
-            this->warning();
-        case ERROR:
-            this->error();
-        default:
-            std::cout << "No complaints!" << std::endl;
-            break;
+    int     result;
+    void    (Harl::*levels_array[4])(void);
+
+    levels_array[0] = &Harl::debug;
+    levels_array[1] = &Harl::info;
+    levels_array[2] = &Harl::warning;
+    levels_array[3] = &Harl::error;
+    result = this->levelResolver(input);
+    if (result < 0) {
+        std::cout << "No complaints!" << std::endl;
+        return ;
     }
+    (this->*levels_array[result])();
     return ;
 }
 
