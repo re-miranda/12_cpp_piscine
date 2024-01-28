@@ -42,14 +42,14 @@ int     Harl::levelResolver( std::string level ) {
 
 void    Harl::complain( std::string input ) {
     int     result;
-    void    (Harl::*levels_array[4])(void);
+    void    (Harl::*levels_array[LEVEL_MAX])(void);
 
-    levels_array[0] = &Harl::debug;
-    levels_array[1] = &Harl::info;
-    levels_array[2] = &Harl::warning;
-    levels_array[3] = &Harl::error;
+    levels_array[DEBUG] = &Harl::debug;
+    levels_array[INFO] = &Harl::info;
+    levels_array[WARNING] = &Harl::warning;
+    levels_array[ERROR] = &Harl::error;
     result = this->levelResolver(input);
-    if (result < 0) {
+    if (result == INVALID) {
         std::cout << "No complaints!" << std::endl;
         return ;
     }

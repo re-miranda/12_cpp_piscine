@@ -5,6 +5,7 @@
 #define WARNING 2
 #define ERROR 3
 #define INVALID -1
+#define LEVEL_MAX 4
 
 class   Harl {
     public:
