@@ -44,12 +44,16 @@ void    Harl::complain( std::string input ) {
     switch (this->levelResolver(input)) {
         case DEBUG:
             this->debug();
+            // Intentional fall through
         case INFO:
             this->info();
+            // Intentional fall through
         case WARNING:
             this->warning();
+            // Intentional fall through
         case ERROR:
             this->error();
+            // Intentional fall through
         default:
             std::cout << "No complaints!" << std::endl;
             break;
