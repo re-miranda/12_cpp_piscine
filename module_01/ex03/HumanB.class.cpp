@@ -1,14 +1,10 @@
 #include "HumanB.class.hpp"
 
-HumanB::HumanB( void ): name(), weapon() {
+HumanB::HumanB( std::string name ): _name(name), _weapon() {
     return ;
 }
 
-HumanB::HumanB( std::string name ): name(name), weapon() {
-    return ;
-}
-
-HumanB::HumanB( std::string name, Weapon weapon ): name(name), weapon(weapon) {
+HumanB::HumanB( std::string name, Weapon &weapon ): _name(name), _weapon(&weapon) {
     return ;
 }
 
@@ -17,12 +13,14 @@ HumanB::~HumanB( void ) {
 }
 
 void    HumanB::attack( void ) {
-    std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+    if (this->_weapon == NULL)
+        return ;
+    std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
     return ;
 }
 
-void    HumanB::setWeapon( Weapon weapon ) {
-    this->weapon = weapon;
+void    HumanB::setWeapon( Weapon &weapon ) {
+    this->_weapon = &weapon;
     return ;
 }
 

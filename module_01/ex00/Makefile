@@ -1,8 +1,10 @@
 NAME		=	zombie
 SRC		+=	main.cpp
-SRC		+=	Zombie.class.cpp
+SRC		+=	Zombie.cpp
+SRC		+=	newZombie.cpp
+SRC		+=	randomChump.cpp
 
-INCLUDE	+=	Zombie.class.hpp
+INCLUDE	+=	Zombie.hpp
 
 CPPC		=	c++-13
 CPPC_FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98

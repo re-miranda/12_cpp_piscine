@@ -1,14 +1,7 @@
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
-Zombie  *newZombie( std::string name ) {
-    return (new Zombie( name ));
-}
-
-void    randomChump( std::string name ) {
-    Zombie stackZombie(name);
-    stackZombie.announce();
-    return ;
-}
+Zombie  *newZombie(std::string name);
+void    randomChump(std::string name);
 
 int main( void ) {
     Zombie  *zombieptr;

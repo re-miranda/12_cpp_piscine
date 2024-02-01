@@ -1,5 +1,5 @@
-#ifndef ZOMBIE_CLASS_HPP
-# define ZOMBIE_CLASS_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 #include <iostream>
 
@@ -17,3 +17,4 @@ class Zombie {
 };
 
 #endif
+

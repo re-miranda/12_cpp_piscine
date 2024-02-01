@@ -1,4 +1,4 @@
-#include "Harl.class.hpp"
+#include "Harl.hpp"
 
 Harl::Harl( void ) {
     return ;
@@ -41,23 +41,19 @@ int     Harl::levelResolver( std::string level ) {
 }
 
 void    Harl::complain( std::string input ) {
-    switch (this->levelResolver(input)) {
-        case DEBUG:
-            this->debug();
-            // Intentional fall through
-        case INFO:
-            this->info();
-            // Intentional fall through
-        case WARNING:
-            this->warning();
-            // Intentional fall through
-        case ERROR:
-            this->error();
-            // Intentional fall through
-        default:
-            std::cout << "No complaints!" << std::endl;
-            break;
+    int     result;
+    void    (Harl::*levels_array[LEVEL_MAX])(void);
+
+    levels_array[DEBUG] = &Harl::debug;
+    levels_array[INFO] = &Harl::info;
+    levels_array[WARNING] = &Harl::warning;
+    levels_array[ERROR] = &Harl::error;
+    result = this->levelResolver(input);
+    if (result == INVALID) {
+        std::cout << "No complaints!" << std::endl;
+        return ;
     }
+    (this->*levels_array[result])();
     return ;
 }
 

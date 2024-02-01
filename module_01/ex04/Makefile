@@ -1,7 +1,8 @@
 NAME	=	my_sed
 MAIN	=	main.cpp
+MAIN	+=	MySed.cpp
 
-INCLUDE	+=	$(SRC:%.cpp=%.hpp)
+INCLUDE	+=	MySed.hpp
 
 CPPC		=	c++-13
 CPPC_FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98

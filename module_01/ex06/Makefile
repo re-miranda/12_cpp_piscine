@@ -1,6 +1,6 @@
 NAME	=	harlFilter
 MAIN	=	main.cpp
-SRC		=	Harl.class.cpp
+SRC		=	Harl.cpp
 INCLUDE	=	$(SRC:%.cpp=%.hpp)
 
 CCPP	=	c++-13

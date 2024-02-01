@@ -1,4 +1,4 @@
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
 Zombie::Zombie( void ): _name() {
     return ;
@@ -16,9 +16,5 @@ Zombie::~Zombie( void ) {
 void    Zombie::announce( void ) const {
     std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
     return ;
-}
-
-void    Zombie::set( std::string name ) {
-    _name = name;
 }
 

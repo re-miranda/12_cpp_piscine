@@ -1,10 +1,11 @@
 NAME		=	zombie
 SRC		+=	main.cpp
-SRC		+=	Zombie.class.cpp
+SRC		+=	Zombie.cpp
+SRC		+=	zombieHorde.cpp
 
-INCLUDE	+=	Zombie.class.hpp
+INCLUDE	+=	Zombie.hpp
 
-CPPC		=	c++-13
+CPPC		=	c++
 CPPC_FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98
 
 all: $(NAME)
