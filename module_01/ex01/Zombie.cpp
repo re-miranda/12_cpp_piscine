@@ -30,6 +30,6 @@ void    Zombie::announce( void ) const {
     return ;
 }
 
-void    Zombie::set( std::string name ) {
+void    Zombie::setName( std::string name ) {
     _name = name;
 }

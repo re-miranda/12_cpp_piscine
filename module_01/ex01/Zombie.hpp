@@ -22,7 +22,7 @@ public:
   ~Zombie(void);
 
   void announce(void) const;
-  void set(std::string name);
+  void setName(std::string name);
 
 private:
   std::string _name;

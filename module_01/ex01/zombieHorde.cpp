@@ -16,6 +16,6 @@ Zombie *zombieHorde( int N, std::string name ) {
     Zombie *retvalue = new Zombie[N];
 
     for (int it = 0; it < N; it++)
-        retvalue[it].set(name);
+        retvalue[it].setName(name);
     return (retvalue);
 }

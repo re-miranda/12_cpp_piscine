@@ -26,7 +26,7 @@ MySed::MySed(std::string filename, std::string s1, std::string s2) {
 	}
 	if (s1.compare(s2) == 0)
 		return ;
-	outfile.open(filename + ".replace");
+	outfile.open((filename + ".replace").c_str());
 	if (outfile.fail()) {
 		std::cout << "Failed to create temporary file" << std::endl;
 		return ;

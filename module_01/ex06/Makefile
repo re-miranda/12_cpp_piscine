@@ -3,7 +3,7 @@ MAIN	=	main.cpp
 SRC		=	Harl.cpp
 INCLUDE	=	$(SRC:%.cpp=%.hpp)
 
-CCPP	=	c++-13
+CCPP	=	c++
 FLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98
 RM		=	rm -rf
 
