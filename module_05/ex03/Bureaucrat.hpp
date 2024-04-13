@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include <stdexcept>
+# include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat {
 
@@ -26,6 +29,11 @@ class Bureaucrat {
         Bureaucrat  operator++( int );
         Bureaucrat  operator--( int );
 
+        // ex01 functions
+        void    signForm( AForm &form) const;
+        // ex02 functions
+        void    executeForm( AForm const &form) const;
+
     private:
 
         std::string const   _name;
@@ -35,7 +43,6 @@ class Bureaucrat {
             public:
                 virtual const char *what() const throw();
         };
-
         class GradeTooLowExcept : public std::exception {
             public:
                 virtual const char *what() const throw();

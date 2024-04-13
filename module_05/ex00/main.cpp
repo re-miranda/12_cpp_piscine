@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main(void) {
+    std::cout << "\n\n>>>>> Bureaucrat A test >>>>>>\n";
     try
     {
         Bureaucrat A(150, "");
@@ -11,30 +12,66 @@ int main(void) {
         std::cout << "Cought error! " << e.what() << std::endl;
     }
 
+    std::cout << "\n\n>>>>> Bureaucrat B test >>>>>>\n";
     try
     {
-        Bureaucrat A(0, "Test name");
+        Bureaucrat B(0, "B_name");
     }
     catch ( std::exception & e )
     {
         std::cout << "Cought error! " << e.what() << std::endl;
     }
 
+    std::cout << "\n\n>>>>> Bureaucrat C test >>>>>>\n";
     try
     {
-        Bureaucrat A(151, "Test name");
+        Bureaucrat C(151, "C_name");
     }
     catch ( std::exception & e )
     {
         std::cout << "Cought error! " << e.what() << std::endl;
     }
     
+    std::cout << "\n\n>>>>> Bureaucrat X test >>>>>>\n";
     try
     {
-        Bureaucrat X(1, "Renato");
+        Bureaucrat X(1,  "X_name");
         std::cout << X << std::endl;
-        X.increment(1);
-        std::cout << "hello";
+        try
+        {
+            X.increment(1);
+        }
+        catch (std::exception & e)
+        {
+            std::cout << "Cought error! " << e.what() << std::endl;
+        }
+        std::cout << X << std::endl;
+        try
+        {
+            X.increment(0);
+        }
+        catch (std::exception & e)
+        {
+            std::cout << "Cought error! " << e.what() << std::endl;
+        }
+        std::cout << X << std::endl;
+        try
+        {
+            X.increment(-1);
+        }
+        catch (std::exception & e)
+        {
+            std::cout << "Cought error! " << e.what() << std::endl;
+        }
+        std::cout << X << std::endl;
+        try
+        {
+            X.increment(-180);
+        }
+        catch (std::exception & e)
+        {
+            std::cout << "Cought error! " << e.what() << std::endl;
+        }
         std::cout << X << std::endl;
     }
     catch (std::exception & e)
@@ -42,5 +79,6 @@ int main(void) {
         std::cout << "Cought error! " << e.what() << std::endl;
     }
 
+    std::cout << "\n\n>>>>> return (0); >>>>>>\n";
     return (0);
 }

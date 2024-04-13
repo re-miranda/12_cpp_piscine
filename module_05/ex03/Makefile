@@ -1,6 +1,6 @@
-NAME 	=	ex00
+NAME 	=	ex03
 MAIN	=	main.cpp
-SRC		=	Bureaucrat.cpp
+SRC		=	Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 INCLUDE	=	$(SRC:%.cpp=%.hpp)
 
 CC		=	c++-13
@@ -9,7 +9,7 @@ RM 		=	rm -rf
 
 all: $(NAME)
 
-$(NAME): $(MAIN) $(SRC) $(INCLUDE)
+$(NAME): $(SRC) $(INCLUDE) $(MAIN)
 	$(CC) $(CFLAGS) -o $(NAME) $(MAIN) $(SRC)
 
 fclean:

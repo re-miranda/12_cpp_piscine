@@ -1,6 +1,6 @@
-NAME 	=	ex00
+NAME 	=	ex01
 MAIN	=	main.cpp
-SRC		=	Bureaucrat.cpp
+SRC		=	Bureaucrat.cpp Form.cpp
 INCLUDE	=	$(SRC:%.cpp=%.hpp)
 
 CC		=	c++-13
