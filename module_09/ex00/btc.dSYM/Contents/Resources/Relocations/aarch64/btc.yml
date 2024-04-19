@@ -1,0 +1,26 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     btc
+relocations:
+  - { offsetInCU: 0xB6, offset: 0xB6, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000033E8, symSize: 0x220 }
+  - { offsetInCU: 0x3568, offset: 0x3568, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xBB28, symBinAddr: 0x1000080B8, symSize: 0x0 }
+  - { offsetInCU: 0x3A08, offset: 0x3A08, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_main.cpp, symObjAddr: 0x270, symBinAddr: 0x100003658, symSize: 0x14 }
+  - { offsetInCU: 0x3A31, offset: 0x3A31, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x234, symBinAddr: 0x10000361C, symSize: 0x3C }
+  - { offsetInCU: 0x3A61, offset: 0x3A61, size: 0x8, addend: 0x0, symName: __ZNSt15__new_allocatorIcED2Ev, symObjAddr: 0x220, symBinAddr: 0x100003608, symSize: 0x14 }
+  - { offsetInCU: 0x3AC0, offset: 0x3AC0, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000033E8, symSize: 0x220 }
+  - { offsetInCU: 0xC1, offset: 0x3C84, size: 0x8, addend: 0x0, symName: __ZStorSt12_Ios_IostateS_, symObjAddr: 0x0, symBinAddr: 0x10000366C, symSize: 0x20 }
+  - { offsetInCU: 0x2A63, offset: 0x6626, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0xC938, symBinAddr: 0x1000080B9, symSize: 0x0 }
+  - { offsetInCU: 0x2C29, offset: 0x67EC, size: 0x8, addend: 0x0, symName: __GLOBAL__sub_I_BitcoinExchange.cpp, symObjAddr: 0x370, symBinAddr: 0x1000039DC, symSize: 0x14 }
+  - { offsetInCU: 0x2C47, offset: 0x680A, size: 0x8, addend: 0x0, symName: __Z41__static_initialization_and_destruction_0v, symObjAddr: 0x334, symBinAddr: 0x1000039A0, symSize: 0x3C }
+  - { offsetInCU: 0x2C8E, offset: 0x6851, size: 0x8, addend: 0x0, symName: __ZlsRSoR15BitcoinExchange, symObjAddr: 0x31C, symBinAddr: 0x100003988, symSize: 0x18 }
+  - { offsetInCU: 0x2CF1, offset: 0x68B4, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeD1Ev, symObjAddr: 0x2D4, symBinAddr: 0x100003940, symSize: 0x48 }
+  - { offsetInCU: 0x2D19, offset: 0x68DC, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeD2Ev, symObjAddr: 0x28C, symBinAddr: 0x1000038F8, symSize: 0x48 }
+  - { offsetInCU: 0x2D2B, offset: 0x68EE, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchange5printEv, symObjAddr: 0x22C, symBinAddr: 0x100003898, symSize: 0x60 }
+  - { offsetInCU: 0x2D56, offset: 0x6919, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchange4openERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE, symObjAddr: 0xC0, symBinAddr: 0x10000372C, symSize: 0x16C }
+  - { offsetInCU: 0x2DDB, offset: 0x699E, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeaSERKS_, symObjAddr: 0xA8, symBinAddr: 0x100003714, symSize: 0x18 }
+  - { offsetInCU: 0x2E51, offset: 0x6A14, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeC1ERKS_, symObjAddr: 0x84, symBinAddr: 0x1000036F0, symSize: 0x24 }
+  - { offsetInCU: 0x2E81, offset: 0x6A44, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeC2ERKS_, symObjAddr: 0x60, symBinAddr: 0x1000036CC, symSize: 0x24 }
+  - { offsetInCU: 0x2EC5, offset: 0x6A88, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeC1Ev, symObjAddr: 0x40, symBinAddr: 0x1000036AC, symSize: 0x20 }
+  - { offsetInCU: 0x2EED, offset: 0x6AB0, size: 0x8, addend: 0x0, symName: __ZN15BitcoinExchangeC2Ev, symObjAddr: 0x20, symBinAddr: 0x10000368C, symSize: 0x20 }
+  - { offsetInCU: 0x2EF9, offset: 0x6ABC, size: 0x8, addend: 0x0, symName: __ZStorSt12_Ios_IostateS_, symObjAddr: 0x0, symBinAddr: 0x10000366C, symSize: 0x20 }
+...
