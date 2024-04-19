@@ -1,3 +1,4 @@
+#include <exception>
 #include <iostream>
 #include <fstream>
 #include "BitcoinExchange.hpp"
@@ -18,6 +19,7 @@ int	main(int argc, char *argv[])
 		std::cout << "Error: could not open input file" << std::endl;
 		return (-2);
 	}
+
 	try {
 		A.open("./data.csv");
 	} catch (std::exception const & e) {
@@ -25,8 +27,7 @@ int	main(int argc, char *argv[])
 		file_input.close();
 		return (-3);
 	}
-	
-	A.print();
+	A.printData();
 
 	file_input.close();
 	return (0);
