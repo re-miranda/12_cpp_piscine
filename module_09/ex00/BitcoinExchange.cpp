@@ -33,9 +33,31 @@ void	BitcoinExchange::printData( void )
 
 	while (std::getline(this->_file_csv, line))
 		std::cout << line << std::endl;
+	return ;
 }
 void	BitcoinExchange::getValue( atd::string key_value )
-{}
+{
+	if (this->_map_data.find(key_value))
+	{
+		std::cout << "found!" << std::endlç
+		return ;
+	}
+	std::cout << "not found!" << std::endlç
+	return ;
+}
+template <typename T>
+void	BitcoinExchange::getValueRange(T	const & start, T const & end)
+{
+	T	it;
+
+	it = start;
+	while (it != end)
+	{
+		this->getValue(*it);
+		++it;
+	}
+	return ;
+}
 void	BitcoinExchange::_cout(std::string str)
 {
 	std::cout << "[BitcoinExchange] " << str << std::endl;
