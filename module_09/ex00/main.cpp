@@ -27,7 +27,7 @@ int	main(int argc, char *argv[])
 		file_input.close();
 		return (-3);
 	}
-	A.printData();
+	A.getValue("2022-03-24");
 
 	file_input.close();
 	return (0);
