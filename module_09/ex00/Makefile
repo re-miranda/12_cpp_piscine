@@ -5,7 +5,7 @@ OBJ		=	$(SRC:%.cpp=%.opp)
 INCLUDE	=	$(SRC:%.cpp=%.hpp)
 
 CXX			=	c++-13
-CXXFLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98 -Wl,-keep_dwarf_unwind
+CXXFLAGS	=	-Wall -Wextra -Werror -Wpedantic -std=c++98
 OXXFLAGS	=	-c $(CXXFLAGS)
 RM			=	rm -rf
 

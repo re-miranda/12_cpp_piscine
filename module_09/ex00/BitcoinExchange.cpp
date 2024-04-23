@@ -52,40 +52,54 @@ int	BitcoinExchange::_load_data( void )
 	}
 	return (0);
 }
-void	BitcoinExchange::getValue( std::string key_value )
+void	BitcoinExchange::getValue( std::string input )
 {
 	std::map<std::string, std::string>::iterator	it;
+	std::string			key;
+	float				amount;
+	size_t				separator_pos;
 	std::stringstream	output;
-	
-	it = this->_map.find(key_value);
+
+	separator_pos = input.find(" | ");
+	if (separator_pos == std::string::npos)
+	{
+		output << "Error: bad input => " << input;
+		this->_cout(output.str());
+		return ;
+	}
+	key = input;
+	key = input.substr(0, separator_pos);
+	amount = std::atof(input.substr(separator_pos + 3, input.length()).c_str());
+	if (amount < 0)
+		output << "Error: not a positive number.";
+	else if (amount > 1000)
+		output << "Error: too large a number.";
+	else
+	{
+		it = this->_find_closest_pair(key);
+		output << key << " => " << amount << " = " << amount * std::atof(it->second.c_str());
+	}
+	this->_cout(output.str());
+	return ;
+}
+std::map<std::string, std::string>::iterator	BitcoinExchange::_find_closest_pair(std::string key)
+{
+	std::map<std::string, std::string>::iterator	it;
+
+	it = this->_map.find(key);
 	if (it == this->_map.end())
 	{
 		it = this->_map.begin();
 		for ( size_t ix = 0; ix < this->_size; ++ix)
-			if (key_value > it->first)
+			if (key > it->first)
 				++it;
-		while (key_value > it->first)
+		while (key > it->first)
 			++it;
 		if (this->_map.begin() != it)
 			--it;
 	}
-	output << it->first << " : " << it->second;
-	this->_cout(output.str());
-	return ;
+	return (it);
 }
-// template <typename T>
-// void	BitcoinExchange::getValueRange(T	const & start, T const & end)
-// {
-// 	T	it;
-
-// 	it = start;
-// 	while (it != end)
-// 	{
-// 		this->getValue(*it);
-// 		++it;
-// 	}
-// 	return ;
-// }
 void	BitcoinExchange::_cout(std::string str)
 {
 	std::cout << "[BitcoinExchange] " << str << std::endl;
