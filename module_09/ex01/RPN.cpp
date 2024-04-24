@@ -40,7 +40,7 @@ bool	RPN::_validate_input( std::string input )
 	}
 	catch (std::exception const & e)
 	{
-		std::cout << "Caugt error: " << e.what() << std::endl;
+		std::cout << "Caught error: " << e.what() << std::endl;
 		return (true);
 	}
 	return (false);
@@ -49,11 +49,11 @@ void	RPN::_throw_if_double_digit( int const & cx )
 {
 	static	int	last_digit;
 
-	if (last_digit)
+	if (last_digit > '0')
 		if (std::isdigit(cx))
 			throw valueTooHighException();
 	if (std::isdigit(cx))
-		last_digit = cx - 48;
+		last_digit = cx;
 	else
 		last_digit = 0;
 	return ;
