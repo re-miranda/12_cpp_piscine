@@ -1,8 +1,4 @@
 #include "RPN.hpp"
-#include <algorithm>
-#include <cctype>
-#include <cstddef>
-#include <stdexcept>
 
 RPN::RPN( void )
 {
