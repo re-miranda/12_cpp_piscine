@@ -8,8 +8,7 @@
 #include <stdexcept>
 #include <algorithm>
 
-class RPN
-{
+class RPN {
 	public:
 		RPN( void );
 		RPN( RPN const & other );
@@ -19,13 +18,14 @@ class RPN
 		int		iptoi( std::string input );
 
 	private:
-		bool	_validate_input( std::string input );
-		void	_read_expression( std::string input );
-		int		_get_result( void );
+		bool		_validate_input( std::string input );
+		int			_read_expression( std::string input );
+		int			_get_result( int const & ax, int const & bx, char const & op);
+		template <typename T>
+		T	_pop(std::stack<T> & stack);
 		static void	_throw_if_double_digit( int const & cx );
 
-		class	valueTooHighException : public std::exception
-		{
+		class	valueTooHighException : public std::exception {
 			public:
 				virtual const char *	what( void ) const throw();
 		};
