@@ -3,6 +3,6 @@
 
 int	main(void)
 {
-    PmergeMe    A;
+	PmergeMe	A;
 	return (0);
 }

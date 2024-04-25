@@ -5,13 +5,13 @@
 
 class PmergeMe
 {
-    public:
-        PmergeMe( void );
-        PmergeMe( PmergeMe const & other );
-        ~PmergeMe( void );
-        PmergeMe &   operator=( PmergeMe const & other );
+	public:
+		PmergeMe( void );
+		PmergeMe( PmergeMe const & other );
+		~PmergeMe( void );
+		PmergeMe &	operator=( PmergeMe const & other );
 
-    private:
+	private:
 };
 
 std::ostream	&operator<<(std::ostream & o, PmergeMe & exchange);

@@ -2,24 +2,24 @@
 
 PmergeMe::PmergeMe( void )
 {
-    return ;
+	return ;
 }
 PmergeMe::PmergeMe( PmergeMe const & other )
 {
-    (void)other;
-    return ;
+	(void)other;
+	return ;
 }
-PmergeMe &   PmergeMe::operator=( PmergeMe const & other )
+PmergeMe &	PmergeMe::operator=( PmergeMe const & other )
 {
-    (void)other;
-    return (*this);
+	(void)other;
+	return (*this);
 }
 PmergeMe::~PmergeMe( void )
 {
-    return ;
+	return ;
 }
 std::ostream	&operator<<(std::ostream & o, PmergeMe & pm)
 {
-    (void)pm;
-    return (o);
+	(void)pm;
+	return (o);
 }
