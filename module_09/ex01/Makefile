@@ -1,4 +1,4 @@
-NAME	=	exn
+NAME	=	rpn
 MAIN	=	main.cpp
 SRC		=	RPN.cpp
 OBJ		=	$(SRC:%.cpp=%.opp)
