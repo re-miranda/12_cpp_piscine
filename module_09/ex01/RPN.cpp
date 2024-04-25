@@ -2,19 +2,19 @@
 
 RPN::RPN( void )
 {
-    return ;
+	return ;
 }
 RPN::RPN( RPN const & other )
 {
-    (void)other;
-    return ;
+	(void)other;
+	return ;
 }
 int	RPN::iptoi( std::string input )
 {
 	int	result;
 
 	if (this->_validate_input(input))
-		 return (-1);
+		return (-1);
 	this->_read_expression(input);
 	result = this->_get_result();
 	std::cout << result << std::endl;
@@ -66,8 +66,8 @@ int	RPN::_get_result( void )
 }
 RPN &   RPN::operator=( RPN const & other )
 {
-    (void)other;
-    return (*this);
+	(void)other;
+	return (*this);
 }
 const char *	RPN::valueTooHighException::what( void ) const throw()
 {
@@ -75,10 +75,10 @@ const char *	RPN::valueTooHighException::what( void ) const throw()
 }
 RPN::~RPN( void )
 {
-    return ;
+	return ;
 }
 std::ostream	&operator<<(std::ostream & o, RPN & rpn)
 {
-    (void)rpn;
-    return (o);
+	(void)rpn;
+	return (o);
 }
