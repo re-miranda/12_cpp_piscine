@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <ctime>
+#include <algorithm>
 
 class PmergeMe
 {
@@ -17,17 +19,17 @@ class PmergeMe
 	private:
 		std::vector<int>	_containerA;
 		std::vector<int>	_containerB;
-		int					_timeA;
-		int					_timeB;
+		time_t				_timer;
+		double				_timeA;
+		double				_timeB;
 	
 		void		_push( int value );
 		template	<typename T>
-		int			_runSort( T & container );
+		double		_runSort( T & container );
 		template	<typename T>
 		void		_sort( T & ContainerT);
 		static void	_print( int const & value );
-		int			_timeStart( void );
-		int			_timeEnd( int const & time);
+		double		_timeEndDiff( void );
 };
 
 std::ostream	&operator<<(std::ostream & o, PmergeMe & exchange);

@@ -1,7 +1,4 @@
 #include "PmergeMe.hpp"
-#include <algorithm>
-#include <cstddef>
-#include <iterator>
 
 PmergeMe::PmergeMe( void ) {
 	return ;
@@ -36,18 +33,20 @@ void	PmergeMe::load(int argc, char *argv[] ) {
 	std::cout << std::endl;
 }
 template <typename T>
-int	PmergeMe::_runSort( T & container ) {
-	int	time;
-	time = _timeStart();
+double	PmergeMe::_runSort( T & container ) {
+	std::time(&this->_timer);
 	this->_sort(container);
-	time = _timeEnd(time);
-	return (time);
+	for (int i = 0; i < 2000; i++)
+		for (int j = 0; j < 2000; j++)
+			for (int k = 0; k < 2000; k++)
+				(void) (i + j + k);
+	return (this->_timeEndDiff());
 }
-int PmergeMe::_timeStart( void ) {
-	return (1);
-}
-int	PmergeMe::_timeEnd( int const & time ) {
-	return (2 - time);
+double	PmergeMe::_timeEndDiff( void ) {
+	time_t	ntime;
+
+	std::time(&ntime);
+	return (std::difftime(ntime, this->_timer));
 }
 void	PmergeMe::_push( int value ) {
 	this->_containerA.push_back(value);
