@@ -11,13 +11,14 @@ int	main(int argc, char *argv[])
 	PmergeMe		A;
 
 	if (argc < 2) {
-		std::cout << "Error: bad arguments" << std::endl;
+		std::cout << "Error: Missing arguments" << std::endl;
 		return (-1);
 	}
 	ix = 0;
 	while (++ix < argc) 
 		if (_validate_input(argv[ix]))
 			return (-2);
+	A.load(argc, argv);
 	return (0);
 }
 
