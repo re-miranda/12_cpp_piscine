@@ -1,4 +1,4 @@
-NAME	=	PmregeMe
+NAME	=	PmergeMe
 MAIN	=	main.cpp
 SRC		=	PmergeMe.cpp
 OBJ		=	$(SRC:%.cpp=%.opp)
