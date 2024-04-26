@@ -18,30 +18,36 @@ void	PmergeMe::load(int argc, char *argv[] ) {
 	while (--argc) {
 		this->_push(std::atoi(*++argv));
 	}
-	this->_runSort(this->_containerA);
-	this->_runSort(this->_containerB);
+	std::cout << "Before: ";
+	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
+	std::cout << std::endl;
+	this->_timeA = this->_runSort(this->_containerA);
+	this->_timeB = this->_runSort(this->_containerB);
+	std::cout << "After : ";
+	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
+	std::cout << std::endl;
+	// only for debug purposes, the other stack:
+	std::cout << "After : ";
+	std::for_each(_containerB.begin(), _containerB.end(), PmergeMe::_print);
+	std::cout << std::endl;
+	std::cout << "Time to process a range of " << this->_containerA.size() << " elements with std::[..] : " << this->_timeA << " us";
+	std::cout << std::endl;
+	std::cout << "Time to process a range of " << this->_containerB.size() << " elements with std::[..] : " << this->_timeB << " us";
+	std::cout << std::endl;
 }
 template <typename T>
-void	PmergeMe::_runSort( T & container ) {
-	
-	std::cout << "Sort before: ";
-	std::for_each(container.begin(), container.end(), PmergeMe::_print);
-	std::cout << std::endl;
-	this->_timeStart();
+int	PmergeMe::_runSort( T & container ) {
+	int	time;
+	time = _timeStart();
 	this->_sort(container);
-	this->_timeEnd();
-	std::cout << "after ( " << this->_time << " ): ";
-	std::for_each(container.begin(), container.end(), PmergeMe::_print);
-	std::cout << std::endl;
-	return ;
+	time = _timeEnd(time);
+	return (time);
 }
-void	PmergeMe::_timeStart( void ) {
-	this->_time = 1;
-	return ;
+int PmergeMe::_timeStart( void ) {
+	return (1);
 }
-void	PmergeMe::_timeEnd( void ) {
-	this->_time = 2 - this->_time;
-	return ;
+int	PmergeMe::_timeEnd( int const & time ) {
+	return (2 - time);
 }
 void	PmergeMe::_push( int value ) {
 	this->_containerA.push_back(value);
