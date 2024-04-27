@@ -29,7 +29,7 @@ void	PmergeMe::run( void ) {
 	this->_timeA = this->_runSort(std::make_pair(this->_containerA.begin(), this->_containerA.end()));
 	this->_timeB = this->_runSort(std::make_pair(this->_containerB.begin(), this->_containerB.end()));
 
-	std::cout << "After (vector)[is_sorted=";
+	std::cout << "After (vector): ";
 	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
 	std::cout << std::endl;
 	// For debug purposes, the other container:
