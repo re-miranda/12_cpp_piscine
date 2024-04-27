@@ -18,7 +18,10 @@ int	main(int argc, char *argv[])
 	while (++ix < argc) 
 		if (_validate_input(argv[ix]))
 			return (-2);
+
 	A.load(argc, argv);
+	A.run();
+
 	return (0);
 }
 
