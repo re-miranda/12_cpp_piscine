@@ -1,4 +1,5 @@
 #include "PmergeMe.hpp"
+#include <cstddef>
 
 PmergeMe::PmergeMe( void ) {
 	return ;
@@ -67,19 +68,21 @@ void	PmergeMe::_sort_merge( std::pair<iterator, iterator> range ) {
 template <typename iterator>
 void	PmergeMe::_sort_pushswap( std::pair<iterator, iterator> range ) {
 	std::vector<int>	copy(distance(range.first, range.second));
+	size_t		middle;
 	iterator	it;
 	iterator	itm;
 
+	middle = std::distance(range.first, range.second) / 2;
 	it = range.first;
-	itm = range.first + (std::distance(range.first, range.second) / 2);
-	for (size_t ix = 0; it + ix < range.second; ix++) {
-		if (it < itm && (itm >= range.second || *it <= *itm))
+	itm = range.first + middle;
+	for (size_t ix = 0; range.first + ix < range.second; ix++) {
+		if (it < range.first + middle && (itm >= range.second || *it <= *itm))
 			copy[ix] = *it++;
 		else {
 			copy[ix] = *itm++;
 		}
 	}
-	for (size_t ix = 0; it + ix < range.second; ix++) {
+	for (size_t ix = 0; range.first + ix < range.second; ix++) {
 		*(range.first + ix) = copy[ix];
 	}
 	return ;
