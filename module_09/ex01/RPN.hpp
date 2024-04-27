@@ -11,13 +11,14 @@
 class RPN {
 	public:
 		RPN( void );
-		RPN( RPN const & other );
 		~RPN( void );
-		RPN &   operator=( RPN const & other );
 
 		int		iptoi( std::string input );
 
 	private:
+		RPN( RPN const & other );
+		RPN &   operator=( RPN const & other );
+
 		bool		_validate_input( std::string input );
 		int			_read_expression( std::string input );
 		int			_get_result( int const & ax, int const & bx, char const & op);

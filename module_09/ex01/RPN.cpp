@@ -1,8 +1,4 @@
 #include "RPN.hpp"
-#include <cctype>
-#include <stack>
-#include <string>
-#include <sys/_types/_in_port_t.h>
 
 RPN::RPN( void ) {
 	return ;
@@ -88,7 +84,7 @@ int	RPN::_get_result( int const & bx, int const & ax, char const & op) {
 	};
 	return (ax);
 }
-RPN &   RPN::operator=( RPN const & other ) {
+RPN &	RPN::operator=( RPN const & other ) {
 	(void)other;
 	return (*this);
 }

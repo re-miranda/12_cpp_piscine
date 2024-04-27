@@ -11,15 +11,16 @@ class BitcoinExchange
 {
 	public:
 		BitcoinExchange( void );
-		BitcoinExchange( BitcoinExchange const & other );
 		~BitcoinExchange( void );
-		BitcoinExchange &   operator=( BitcoinExchange const & other );
 		
 		void	open( std::string const & path );
 		void	printData( void );
 		void	getValue( std::string key_value );
 
 	private:
+		BitcoinExchange( BitcoinExchange const & other );
+		BitcoinExchange &   operator=( BitcoinExchange const & other );
+
 		std::basic_ifstream<char>			_file_csv;
 		size_t								_size;
 		std::map<std::string, std::string>	_map;

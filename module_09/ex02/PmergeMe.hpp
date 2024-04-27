@@ -12,14 +12,15 @@ class PmergeMe
 {
 	public:
 		PmergeMe( void );
-		PmergeMe( PmergeMe const & other );
 		~PmergeMe( void );
-		PmergeMe &	operator=( PmergeMe const & other );
 
 		void	load( int argc, char *argv[] );
 		void	run( void );
 
 	private:
+		PmergeMe( PmergeMe const & other );
+		PmergeMe &	operator=( PmergeMe const & other );
+
 		std::vector<int>	_containerA;
 		std::deque<int>		_containerB;
 		suseconds_t			_timeTakenA;
@@ -36,7 +37,5 @@ class PmergeMe
 		void		_sort_insertsort(std::pair<iterator, iterator> range);
 		static void	_print( int const & value );
 };
-
-std::ostream	&operator<<(std::ostream & o, PmergeMe & exchange);
 
 #endif
