@@ -1,4 +1,5 @@
 #include "PmergeMe.hpp"
+#include <algorithm>
 
 PmergeMe::PmergeMe( void ) {
 	return ;
@@ -29,18 +30,18 @@ void	PmergeMe::run( void ) {
 	this->_timeA = this->_runSort(std::make_pair(this->_containerA.begin(), this->_containerA.end()));
 	this->_timeB = this->_runSort(std::make_pair(this->_containerB.begin(), this->_containerB.end()));
 
-	std::cout << "After : ";
+	std::cout << "After (vector)[is_sorted=" << std::is_sorted(this->_containerA.begin(), this->_containerA.end()) << "]: ";
 	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
 	std::cout << std::endl;
 	// For debug purposes, the other container:
-	std::cout << "After : ";
+	std::cout << "After (deque)[is_sorted=" << std::is_sorted(this->_containerB.begin(), this->_containerB.end()) << "]: ";
 	std::for_each(_containerB.begin(), _containerB.end(), PmergeMe::_print);
 	std::cout << std::endl;
 	// continue...
 
-	std::cout << "Time to process a range of " << this->_containerA.size() << " elements with std::[..] : " << this->_timeA << " us";
+	std::cout << "Time to process a range of " << this->_containerA.size() << " elements with std::vector : " << this->_timeA << " us";
 	std::cout << std::endl;
-	std::cout << "Time to process a range of " << this->_containerB.size() << " elements with std::[..] : " << this->_timeB << " us";
+	std::cout << "Time to process a range of " << this->_containerB.size() << " elements with std::deque : " << this->_timeB << " us";
 	std::cout << std::endl;
 }
 template <typename iterator>

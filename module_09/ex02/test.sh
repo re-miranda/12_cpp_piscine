@@ -6,5 +6,5 @@ echo "# Big test:"
 ./PmergeMe `shuf -i 1-100000 -n 3000 | tr "\n" " "`
 echo "# Negative input test:"
 ./PmergeMe "-1" "2"
-echo "# For OSX USER:"
+echo "# Big for OSX USER:"
 ./PmergeMe `jot -r 3000 1 100000 | tr '\n' ' '`
