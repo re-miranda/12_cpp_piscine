@@ -1,5 +1,4 @@
 #include "PmergeMe.hpp"
-#include <cstddef>
 
 PmergeMe::PmergeMe( void ) {
 	return ;
@@ -27,8 +26,8 @@ void	PmergeMe::run( void ) {
 	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
 	std::cout << std::endl;
 
-	this->_timeA = this->_runSort(std::make_pair(this->_containerA.begin(), this->_containerA.end()));
-	this->_timeB = this->_runSort(std::make_pair(this->_containerB.begin(), this->_containerB.end()));
+	this->_timeTakenA = this->_runSort(std::make_pair(this->_containerA.begin(), this->_containerA.end()));
+	this->_timeTakenB = this->_runSort(std::make_pair(this->_containerB.begin(), this->_containerB.end()));
 
 	std::cout << "After (vector): ";
 	std::for_each(_containerA.begin(), _containerA.end(), PmergeMe::_print);
@@ -39,16 +38,21 @@ void	PmergeMe::run( void ) {
 	std::cout << std::endl;
 	// continue...
 
-	std::cout << "Time to process a range of " << this->_containerA.size() << " elements with std::vector : " << this->_timeA << " us";
+	std::cout << "Time to process a range of " << this->_containerA.size() << " elements with std::vector : " << this->_timeTakenA << " us";
 	std::cout << std::endl;
-	std::cout << "Time to process a range of " << this->_containerB.size() << " elements with std::deque : " << this->_timeB << " us";
+	std::cout << "Time to process a range of " << this->_containerB.size() << " elements with std::deque : " << this->_timeTakenB << " us";
 	std::cout << std::endl;
 }
 template <typename iterator>
-double	PmergeMe::_runSort(std::pair<iterator, iterator> range) {
-	std::time(&this->_timer);
+size_t	PmergeMe::_runSort(std::pair<iterator, iterator> range) {
+	struct timeval	start;
+	struct timeval	end;
+
+	gettimeofday(&start, NULL);
 	this->_sort_merge(range);
-	return (this->_timeEndDiff());
+	gettimeofday(&end, NULL);
+	timersub(&end, &start, &end);
+	return (end.tv_sec + end.tv_usec);
 }
 template <typename iterator>
 void	PmergeMe::_sort_merge( std::pair<iterator, iterator> range ) {
@@ -60,9 +64,8 @@ void	PmergeMe::_sort_merge( std::pair<iterator, iterator> range ) {
 		this->_sort_merge(std::make_pair(middle, range.second));
 		this->_sort_pushswap(range);
 	}
-	else {
+	else
 		this->_sort_insertsort(range);
-	}
 	return ;
 }
 template <typename iterator>
@@ -110,12 +113,6 @@ void	PmergeMe::_sort_insertsort(std::pair<iterator, iterator> range) {
 		++it;
 	}
 	return ;
-}
-double	PmergeMe::_timeEndDiff( void ) {
-	time_t	ntime;
-
-	std::time(&ntime);
-	return (std::difftime(ntime, this->_timer));
 }
 void PmergeMe::_print( int const & value ) {
 	std::cout << value << " ";

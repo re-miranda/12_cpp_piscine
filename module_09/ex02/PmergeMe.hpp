@@ -4,7 +4,7 @@
 #include <cstddef>
 #include <iostream>
 #include <vector>
-#include <ctime>
+#include <sys/time.h>
 #include <algorithm>
 #include <deque>
 
@@ -22,13 +22,12 @@ class PmergeMe
 	private:
 		std::vector<int>	_containerA;
 		std::deque<int>		_containerB;
-		time_t				_timer;
-		double				_timeA;
-		double				_timeB;
+		suseconds_t			_timeTakenA;
+		suseconds_t			_timeTakenB;
 	
 		void		_push( int value );
 		template	<typename iterator>
-		double		_runSort( std::pair<iterator, iterator> range );
+		size_t	_runSort( std::pair<iterator, iterator> range );
 		template	<typename iterator>
 		void		_sort_merge( std::pair<iterator, iterator> range );
 		template	<typename iterator>
@@ -36,7 +35,6 @@ class PmergeMe
 		template	<typename iterator>
 		void		_sort_insertsort(std::pair<iterator, iterator> range);
 		static void	_print( int const & value );
-		double		_timeEndDiff( void );
 };
 
 std::ostream	&operator<<(std::ostream & o, PmergeMe & exchange);
