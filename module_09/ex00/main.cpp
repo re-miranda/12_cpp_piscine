@@ -37,7 +37,6 @@ int	main(int argc, char *argv[])
 		file_input.close();
 		return (-3);
 	}
-	A.getValue("2022-03-24");
 	while (std::getline(file_input, line))
 		A.getValue(line);
 
